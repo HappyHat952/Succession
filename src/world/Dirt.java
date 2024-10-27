@@ -13,17 +13,19 @@ public class Dirt {
     public Dirt()
     {
         level = 1;
-        dirtSprite = new SpriteSheet(Images.DIRT, Images.DIRT.getWidth(), level);
     }
 
     public void update()
     {
-        dirtSprite = new SpriteSheet(Images.DIRT, Images.DIRT.getWidth(), level);
     }
 
     public void render(Graphics g)
     {
-        g.drawImage(dirtSprite.getSubImage(0,0), 0, Main.getScreenHeight()-World.ROCK_HEIGHT-level);
+        for (int i=1; i<=level; i++)
+        {
+            g.drawImage(Images.DIRT.getSubImage(0,Images.DIRT.getVerticalCount()-i), 0, Main.getScreenHeight()-World.ROCK_HEIGHT-i);
+        }
+
     }
 
     public static int getLevel(){return level;}

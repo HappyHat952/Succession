@@ -18,7 +18,6 @@ public class Main extends StateBasedGame
 	public Main(String name) 
 	{
 		super(name);
-
 		game = new Game(GAME_ID);
 	}
 

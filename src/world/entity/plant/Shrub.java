@@ -8,8 +8,6 @@ public class Shrub extends Plant {
     {
         super();
 
-
-
         initialize();
     }
 }

@@ -22,6 +22,8 @@ abstract public class Entity {
     {
         //sets up the countdown
         countDown = lifespan * Main.FRAMES_PER_SECOND;
+
+        //sets up the position;
         myX -= myImage.getHeight();
         myY -= myImage.getHeight();
         myY +=20;
