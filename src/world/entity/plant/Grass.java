@@ -8,7 +8,7 @@ public class Grass extends Plant {
     public Grass()
     {
         super();
-        lifespan = (int)((Math.random()*10) + 7); //7 to 17;
+        lifespan = 7;
         dirtVal = 2;
         myImage = Images.GRASS;
 
