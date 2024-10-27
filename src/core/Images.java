@@ -9,11 +9,11 @@ import java.util.ArrayList;
 public class Images {
      public static SpriteSheet DIRT;
 
-     public static SpriteSheet LICHEN;
      public static Image GRASS;
      public static Image SHRUB;
 
      public static ArrayList<Image> LICHENS;
+     public static ArrayList<Image> TREES;
 
     public static void loadImages()
     {
@@ -25,9 +25,11 @@ public class Images {
             LICHENS.add(new Image("res/lichen_one.png"));
             LICHENS.add(new Image("res/lichen_two.png"));
             LICHENS.add(new Image("res/lichen_three.png"));
-            LICHEN = new SpriteSheet(new Image("res/lichen.png"),93,85 );
             GRASS = new Image("res/grass.png");
             SHRUB = new Image("res/shrub.png");
+            TREES = new ArrayList<Image>();
+            TREES.add(new Image("res/tree_small.png"));
+            TREES.add(new Image("res/tree_tall.png"));
         }
         catch (SlickException e)
         {

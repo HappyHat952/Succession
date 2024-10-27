@@ -12,7 +12,7 @@ public class Lichen extends Plant {
         super();
         dirtVal = 1;
         lifespan = 5;
-        myImage = Images.LICHEN.getSubImage((int)(Math.random()*3),0);
+        myImage = Images.LICHENS.get((int)(Math.random()*3));
 
         initialize();
     }
