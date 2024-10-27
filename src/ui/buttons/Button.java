@@ -29,6 +29,7 @@ abstract public class Button {
     {
         g.setColor(color);
         g.fillRect(myX,myY,width,height);
+        g.setColor(Color.black);
         g.drawString(name,myX,myY);
     }
     public void update(){}

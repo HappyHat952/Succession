@@ -8,15 +8,16 @@ import java.util.ArrayList;
 
 public class AddNewButtonManager {
     private static ArrayList<AddNewButton> buttons;
+    int X_LEFT = 1500;
 
     public AddNewButtonManager()
     {
         buttons = new ArrayList<>();
-        buttons.add(new AddNewLichen(1500, 100));
+        buttons.add(new AddNewLichen(X_LEFT, 100));
 
     }
 
-    public void render(Graphics g)
+    public  void render(Graphics g)
     {
         for (AddNewButton b: buttons)
         {

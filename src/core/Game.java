@@ -6,6 +6,7 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+import ui.UI;
 import world.Dirt;
 import world.World;
 
@@ -13,6 +14,7 @@ public class Game extends BasicGameState
 {	
 	private int id;
 	private World world;
+	private UI ui;
 
 	public Game(int id)
 	{
@@ -30,21 +32,21 @@ public class Game extends BasicGameState
 		gc.setShowFPS(true);
 		Images.loadImages();
 		world = new World(gc);
+		ui = new UI(gc);
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException
 	{	
 		// This updates your game's logic every frame.  NO DRAWING.
 		world.update();
+		ui.update();
 	}
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException 
 	{
 		// This code renders shapes and images every frame.
-		g.setColor(Color.white);
-		g.drawString("Hello World!", Main.getScreenWidth() * .5f, Main.getScreenHeight() * .5f);
-		g.drawImage(Images.DIRT,0,0);
 		world.render(g);
+		ui.render(g);
 
 	}
 	
@@ -65,7 +67,7 @@ public class Game extends BasicGameState
 	
 	public void mousePressed(int button, int x, int y)
 	{
-		Dirt.addToLevel(1);
+		ui.mousePressed(button,x,y);
 		// This code happens every time the user presses the mouse
 	}
 	

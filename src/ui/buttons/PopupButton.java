@@ -12,7 +12,7 @@ public class PopupButton extends Button {
     }
     @Override
     public void action() {
-        Dirt.addToLevel(3);
+        //Dirt.addToLevel(3);
 
     }
 }

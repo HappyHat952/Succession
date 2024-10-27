@@ -58,6 +58,7 @@ public class World {
     {
         if (plant != null)
         {
+            System.out.println("add plnat");
             plants.add(plant);
         }
     }

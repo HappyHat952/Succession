@@ -10,7 +10,4 @@ abstract public class AddNewButton extends Button {
     {
         super(x,y, WIDTH, HEIGHT, Color.green,"add "+plantName);
     }
-    @Override
-    public void action() {
-    }
 }
