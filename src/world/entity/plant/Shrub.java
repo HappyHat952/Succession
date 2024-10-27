@@ -8,7 +8,7 @@ public class Shrub extends Plant {
     public Shrub()
     {
         super();
-        lifespan = 9;
+        lifespan = 30;
         dirtVal = 3;
         myImage = Images.SHRUB;
 

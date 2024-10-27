@@ -31,6 +31,7 @@ public class Game extends BasicGameState
 		// This code happens when you enter a game state for the *first time.*
 		gc.setShowFPS(true);
 		Images.loadImages();
+		Popups.loadPopups();
 		world = new World(gc);
 		ui = new UI(gc);
 	}

@@ -5,6 +5,8 @@ import core.Main;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SpriteSheet;
 
+import static core.Images.DIRT;
+
 public class Dirt {
     private static int level;
     private static int height;
@@ -23,7 +25,11 @@ public class Dirt {
     {
         for (int i=1; i<=level; i++)
         {
-            g.drawImage(Images.DIRT.getSubImage(0,Images.DIRT.getVerticalCount()-i), 0, Main.getScreenHeight()-World.ROCK_HEIGHT-i);
+            if (i< DIRT.getVerticalCount()-1)
+            {
+                g.drawImage(DIRT.getSubImage(0, DIRT.getVerticalCount()-i), 0, Main.getScreenHeight()-World.ROCK_HEIGHT-i);
+            }
+
         }
 
     }
@@ -35,9 +41,11 @@ public class Dirt {
         return Main.getScreenHeight()-World.ROCK_HEIGHT-level;
     }
 
+    public static boolean maxOut(){ return (level) > DIRT.getVerticalCount(); }
+
     public static void addToLevel(int i)
     {
-        if ((level += i) <= Main.getScreenHeight()/3)
+        if ((level += i) <= DIRT.getVerticalCount())
         {
             level += i;
         }

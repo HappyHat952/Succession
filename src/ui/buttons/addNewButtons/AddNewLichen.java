@@ -8,9 +8,10 @@ import world.entity.plant.Lichen;
 public class AddNewLichen extends AddNewButton {
     public AddNewLichen(int x, int y) {
         super(x, y, Lichen.NAME);
-        dirtMinimum = 0;
+        dirtMinimum = -5;
     }
     protected void add() {
         World.addPlant(new Lichen());
     }
+    public  int getDirtMinimum(){ return dirtMinimum;}
 }

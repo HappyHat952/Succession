@@ -4,6 +4,10 @@ import core.Main;
 import org.newdawn.slick.*;
 import world.entity.Entity;
 import world.entity.Plant;
+import world.entity.plant.Grass;
+import world.entity.plant.Lichen;
+import world.entity.plant.Shrub;
+import world.entity.plant.Trees;
 
 import java.util.ArrayList;
 
@@ -28,9 +32,33 @@ public class World {
         g.setColor(Color.lightGray);
         g.fillRect(0, Main.getScreenHeight()- ROCK_HEIGHT, Main.getScreenWidth(), ROCK_HEIGHT);
         dirt.render(g);
-        for (Plant p: plants)
+        for (int i =plants.size()-1;i>=0; i--)
         {
-            p.render(g);
+            if(plants.get(i) instanceof Grass)
+            {
+                plants.get(i).render(g);
+            }
+        }
+        for (int i =plants.size()-1;i>=0; i--)
+        {
+            if(plants.get(i) instanceof Trees)
+            {
+                plants.get(i).render(g);
+            }
+        }
+        for (int i =plants.size()-1;i>=0; i--)
+        {
+            if(plants.get(i) instanceof Shrub)
+            {
+                plants.get(i).render(g);
+            }
+        }
+        for (int i =plants.size()-1;i>=0; i--)
+        {
+            if(plants.get(i) instanceof Lichen)
+            {
+                plants.get(i).render(g);
+            }
         }
 
     }
@@ -40,14 +68,26 @@ public class World {
         {
             dirt.update();
         }
-        for (Plant p: plants)
+        for (int i = 0; i<plants.size(); i++)
         {
-            p.update();
+            plants.get(i).update();
+
         }
+        for (int i = 0; i<plants.size(); i++)
+        {
+            if (Dirt.maxOut() && plants.get(i).isDead())
+            {
+                plants.remove(i);
+                i--;
+            }
+
+        }
+
     }
 
-    public void pause() {pause = true;}
-    public void unpause() {pause = false;}
+    public static boolean isPause(){ return pause;}
+    public static void pause() {pause = true;}
+    public static void unpause() {pause = false;}
 
 
     public void mousePressed(int button, int x, int y) {
