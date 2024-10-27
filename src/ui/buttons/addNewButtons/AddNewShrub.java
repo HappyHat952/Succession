@@ -9,7 +9,6 @@ public class AddNewShrub extends AddNewButton {
     {
         super(x, y, Shrub.NAME);
         dirtMinimum = 60;
-
     }
     protected void add() {World.addPlant(new Shrub());}
 }

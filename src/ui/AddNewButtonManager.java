@@ -4,6 +4,8 @@ import org.newdawn.slick.Graphics;
 import ui.buttons.AddNewButton;
 import ui.buttons.addNewButtons.AddNewGrass;
 import ui.buttons.addNewButtons.AddNewLichen;
+import ui.buttons.addNewButtons.AddNewShrub;
+import ui.buttons.addNewButtons.AddNewTree;
 
 import java.util.ArrayList;
 
@@ -16,6 +18,8 @@ public class AddNewButtonManager {
         buttons = new ArrayList<>();
         buttons.add(new AddNewLichen(X_LEFT, 100));
         buttons.add(new AddNewGrass(X_LEFT, 200));
+        buttons.add(new AddNewShrub(X_LEFT, 300));
+        buttons.add(new AddNewTree(X_LEFT, 400));
 
     }
 
