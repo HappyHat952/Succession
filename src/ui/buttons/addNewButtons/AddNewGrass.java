@@ -13,4 +13,5 @@ public class AddNewGrass extends AddNewButton {
     protected void add() {
         World.addPlant(new Grass());
     }
+    public  int getDirtMinimum(){ return dirtMinimum;}
 }

@@ -4,6 +4,11 @@ import core.Main;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import world.Dirt;
+import world.World;
+import world.entity.plant.Grass;
+import world.entity.plant.Lichen;
+import world.entity.plant.Shrub;
+import world.entity.plant.Trees;
 
 abstract public class Entity {
     protected int lifespan;//lifespan in seconds
@@ -39,15 +44,35 @@ abstract public class Entity {
 
     }
 
+    public boolean isDead()
+    {
+        return countDown ==-1;
+    }
+
     public void update()
     {
         if (countDown>0)
         {
             countDown --;
         }
-        else if(countDown ==0) {
+        else if(countDown ==0 && !Dirt.maxOut()) {
             Dirt.addToLevel(dirtVal);
             countDown --;
+        }
+        else if (countDown == 0 && Dirt.maxOut())
+        {
+            int i = (int)(Math.random()*1000);
+            switch (i){
+                case 0:
+                    World.addPlant(new Lichen());
+                case 1:
+                    World.addPlant(new Grass());
+                case 2:
+                    World.addPlant(new Shrub());
+                case 3:
+                    World.addPlant(new Trees());
+            }
+            countDown--;
         }
 
     }

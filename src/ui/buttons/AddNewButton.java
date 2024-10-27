@@ -35,6 +35,8 @@ abstract public class AddNewButton extends Button {
         return Dirt.getLevel()>=dirtMinimum;
     }
 
+
+
     protected void action()
     {
         if (isActivated())

@@ -8,7 +8,7 @@ public class Trees extends Plant {
     public Trees()
     {
         super();
-        lifespan = 11;
+        lifespan = 40;
         dirtVal = 4;
         myImage = Images.TREES.get((int)(Math.random()*2));
 
