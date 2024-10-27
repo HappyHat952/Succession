@@ -3,12 +3,15 @@ package world.entity;
 import core.Main;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import ui.buttons.addNewButtons.AddNewTree;
 import world.Dirt;
 import world.World;
 import world.entity.plant.Grass;
 import world.entity.plant.Lichen;
 import world.entity.plant.Shrub;
 import world.entity.plant.Trees;
+
+import ui.PopupManager;
 
 abstract public class Entity {
     protected int lifespan;//lifespan in seconds
@@ -46,7 +49,7 @@ abstract public class Entity {
 
     public boolean isDead()
     {
-        return countDown ==-1;
+        return (countDown ==-1) && !PopupManager.getSuccessionStatus();
     }
 
     public void update()
@@ -74,6 +77,5 @@ abstract public class Entity {
             }
             countDown--;
         }
-
     }
 }

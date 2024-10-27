@@ -17,12 +17,13 @@ import static core.Popups.*;
 public class PopupManager {
     private static ArrayList<Popup> popups;
     int X_LEFT = 1500;
+    private static boolean successionComplete;
 
     public PopupManager()
     {
         popups = new ArrayList<>();
         popups.add(Popups.POP1);
-
+        successionComplete = false;
     }
 
     public  void render(Graphics g)
@@ -42,6 +43,7 @@ public class PopupManager {
         if (Dirt.maxOut())
         {
             popups.add(POP6);
+            successionComplete = true;
         }
         else if (Dirt.getLevel() >= (new AddNewTree(-5,-5)).getDirtMinimum() && POP5.isActive()) {
             popups.add(POP5);
@@ -65,6 +67,11 @@ public class PopupManager {
         {
             p.click(x, y);
         }
+    }
+
+    public static boolean getSuccessionStatus()
+    {
+        return successionComplete;
     }
 
 }
