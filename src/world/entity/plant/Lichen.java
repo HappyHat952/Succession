@@ -11,7 +11,7 @@ public class Lichen extends Plant {
     {
         super();
         dirtVal = 1;
-        lifespan = 5;
+        lifespan = (int)((Math.random()*10) + 5); //5 to 15;
         myImage = Images.LICHENS.get((int)(Math.random()*3));
 
         initialize();
