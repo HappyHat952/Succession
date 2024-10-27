@@ -19,17 +19,20 @@ public class World {
 
     private static boolean pause;
 
+    private static Color rock;
+
     public World(GameContainer gc) {
         this.gc = gc;
         dirt = new Dirt();
         plants = new ArrayList<Plant>();
+        rock = new Color(118, 107, 102);
     }
 
     public void render(Graphics g)
     {
         g.setBackground(Color.cyan);
         //draws a rectangle for the rock
-        g.setColor(Color.lightGray);
+        g.setColor(rock);
         g.fillRect(0, Main.getScreenHeight()- ROCK_HEIGHT, Main.getScreenWidth(), ROCK_HEIGHT);
         dirt.render(g);
         for (int i =plants.size()-1;i>=0; i--)

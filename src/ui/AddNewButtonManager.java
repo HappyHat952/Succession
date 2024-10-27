@@ -11,15 +11,15 @@ import java.util.ArrayList;
 
 public class AddNewButtonManager {
     private static ArrayList<AddNewButton> buttons;
-    int X_LEFT = 1500;
+    int Y_LEFT = 100;
 
     public AddNewButtonManager()
     {
         buttons = new ArrayList<>();
-        buttons.add(new AddNewLichen(X_LEFT, 100));
-        buttons.add(new AddNewGrass(X_LEFT, 200));
-        buttons.add(new AddNewShrub(X_LEFT, 300));
-        buttons.add(new AddNewTree(X_LEFT, 400));
+        buttons.add(new AddNewLichen(1000, Y_LEFT));
+        buttons.add(new AddNewGrass(1200, Y_LEFT));
+        buttons.add(new AddNewShrub(1400, Y_LEFT));
+        buttons.add(new AddNewTree(1600, Y_LEFT));
 
     }
 
