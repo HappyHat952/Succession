@@ -3,10 +3,12 @@ package world.entity;
 import core.Main;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import world.Dirt;
 
 abstract public class Entity {
     protected int lifespan;//lifespan in seconds
     protected int countDown;//lifespan in frames;
+    protected int dirtVal;
     protected int myX;
     protected int myY;
     protected Image myImage;
@@ -21,16 +23,30 @@ abstract public class Entity {
         //sets up the countdown
         countDown = lifespan * Main.FRAMES_PER_SECOND;
         myX -= myImage.getHeight();
+        myY -= myImage.getHeight();
+        myY +=20;
     }
 
 
     public void render(Graphics g)
     {
-        g.drawImage(myImage, myX,myY);
+        if (countDown>0)
+        {
+            g.drawImage(myImage, myX,myY);
+        }
+
     }
 
     public void update()
     {
-        countDown --;
+        if (countDown>0)
+        {
+            countDown --;
+        }
+        else if(countDown ==0) {
+            Dirt.addToLevel(dirtVal);
+            countDown --;
+        }
+
     }
 }

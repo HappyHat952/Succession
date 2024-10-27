@@ -26,6 +26,8 @@ public class Dirt {
         g.drawImage(dirtSprite.getSubImage(0,0), 0, Main.getScreenHeight()-World.ROCK_HEIGHT-level);
     }
 
+    public static int getLevel(){return level;}
+
     public static int getHeight()
     {
         return Main.getScreenHeight()-World.ROCK_HEIGHT-level;

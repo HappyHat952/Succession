@@ -4,12 +4,12 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
 abstract public class Button {
-    private int myX;
-    private int myY;
-    private int width;
-    private int height;
-    private Color color;
-    private String name;
+    protected int myX;
+    protected int myY;
+    protected int width;
+    protected int height;
+    protected Color color;
+    protected String name;
 
      public Button(int x, int y, int width, int height, Color color, String name)
     {
@@ -41,6 +41,6 @@ abstract public class Button {
         }
     }
 
-    abstract public void action();
+    abstract protected void action();
 
 }
