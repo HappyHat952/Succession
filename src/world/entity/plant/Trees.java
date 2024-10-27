@@ -10,7 +10,7 @@ public class Trees extends Plant {
         super();
         lifespan = 11;
         dirtVal = 4;
-        myImage = Images.TREES.get((int) Math.random()*2);
+        myImage = Images.TREES.get((int)(Math.random()*2));
 
 
 
