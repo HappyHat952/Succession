@@ -20,7 +20,6 @@ public class AddNewButtonManager {
         buttons.add(new AddNewGrass(1200, Y_LEFT));
         buttons.add(new AddNewShrub(1400, Y_LEFT));
         buttons.add(new AddNewTree(1600, Y_LEFT));
-
     }
 
     public  void render(Graphics g)
